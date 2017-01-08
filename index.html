@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+	
+		<link rel="stylesheet" type="text/css" href="format.css">
+		<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"> </script>
+		<script>
+			$(document).ready(function(){
+				$("#sub-b1").click(function(){
+					$("#online-form").hide("slow");
+					$("#requirements").show("slow");
+				});
+				$("#sub-b2").click(function(){
+					$("#online-form").show("slow");
+					$("#requirements").hide("slow");
+				});
+				$("#b1").click(function(){
+					$(".sub").hide("slow");
+					$("#form-sec").hide("slow");
+					$("#contactus-sec").hide("slow");
+					$("#aboutus-sec").hide("slow");
+					$("#home-sec").show("slow");
+				});
+				$("#b2").click(function(){
+					$(".sub").show("slow");
+					$("#requirements").hide("slow");
+					$("#online-form").hide("slow");
+					$("#contactus-sec").hide("slow");
+					$("#home-sec").hide("slow");
+					$("#aboutus-sec").hide("slow");
+					$("#form-sec").show("slow");
+				});
+				$("#b3").click(function(){
+					$(".sub").hide("slow");
+					$("#form-sec").hide("slow");
+					$("#contactus-sec").hide("slow");
+					$("#home-sec").hide("slow");
+					$("#aboutus-sec").show("slow");
+				});
+				$("#b4").click(function(){
+					$(".sub").hide("slow");
+					$("#form-sec").hide("slow");
+					$("#home-sec").hide("slow");
+					$("#aboutus-sec").hide("slow");
+					$("#contactus-sec").show("slow");
+				});
+				$(".sub").hide();
+				$("#contactus-sec").hide();
+				$("#form-sec").hide();
+				$("#requirements").hide();
+				$("#aboutus-sec").hide();
+				$("#online-form").hide();
+			});
+		</script>
+		<title>
+			OSCA | Office for Senior Citizens Affairs
+		</title>
+		
+	</head>
+
+	<body onload="loadSelectors()">
+	
+		<img src="cover1.jpg" name="slide"  alt="rotating image" id="rotator">
+		<script type="text/javascript">
+			var image1 = new Image()
+			image1.src = "cover1.jpg"
+
+			var image2 = new Image()
+			image2.src = "cover2.jpg"
+
+			var image3 = new Image()
+			image3.src = "cover3.jpg"
+			
+			var image4 = new Image()
+			image4.src = "cover4.jpg"
+			var step = 1
+			function slideit() {
+				document.images["slide"].src = eval("image" + step + ".src")
+				if (step < 4)
+					step++
+				else
+					step = 1
+				setTimeout("slideit()", 3000)
+			}
+			slideit()
+		</script>
+		
+		<nav id="index">
+			<table class="navi">
+				<tr class="navi" id="home-navi">
+					<td> <button class="main" id="b1"> Home </button> </td>
+				</tr>
+				<tr class="navi" id="form-navi">
+					<td> <button class="main" id="b2"> Form </button> </td>
+				</tr>
+					<tr>
+						<td> <button class="sub" id="sub-b1"> Requirements </button> </td>
+					</tr>
+					<tr>
+						<td> <button class="sub" id="sub-b2"> Online Form </button> </td>
+					</tr>
+				<tr class="navi" id="aboutus-navi">
+					<td> <button class="main" id="b3"> About Us </button> </td>
+				</tr>
+				<tr class="navi" id="contactus-navi">
+					<td> <button class="main" id="b4"> Contact Us </button> </td>
+				</tr>
+			</table>
+		</nav>
+		
+		<section id="form-sec" class="container">
+			<div class="index-header">
+				APPLICATION FOR SENIOR CITIZEN'S ID
+			</div>
+			<form action="success.html" method="post" id="online-form"> <br> <br>
+				<fieldset>
+					<legend> Type of application </legend>
+					<label>
+						<input type="radio" name="type" value="new" required> New <br>
+						<input type="radio" name="type" value="replacement" required> Replacement of lost/torn out/old/unidentified or non-LB issued ID/correction of entry on the old ID <br>
+					</label>
+				</fieldset> <br>
+				<fieldset>
+					<legend> Personal Information  </legend>
+					<p>
+						<label> Name: <br>
+							<input type ="text" size="25" name="first-name" placeholder="First Name" class="tab" required>
+							<input type ="text" size="25" name="middle-name" placeholder="Middle Name" required>
+							<input type ="text" size="25" name="last-name" placeholder="Last Name" required>
+						</label>
+					</p>
+					<p>
+						<label> Address: <br>
+							<input type ="text" size="9px" name="house-number" placeholder="House Number" class="tab" required>
+							<input type ="text" name="street-sitio" placeholder="Street/Sitio" required>
+							Barangay: 
+							<select name="barangay" required>
+								<option value="Anos"> Anos </option>
+								<option value="Bagong Silang"> Bagong Silang </option>
+								<option value="Bambang"> Bambang </option>
+								<option value="Batong Malake"> Batong Malake </option>
+								<option value="Baybayin"> Baybayin </option>
+								<option value="Bayog"> Bayog </option>
+								<option value="Lalakay"> Lalakay </option>
+								<option value="Maahas"> Maahas </option>
+								<option value="Malinta"> Malinta </option>
+								<option value="Mayondon"> Mayondon </option>
+								<option value="Putho Tuntungin"> Putho Tuntungin </option>
+								<option value="San Antonio"> San Antonio </option>
+								<option value="Tadlac"> Tadlac </option>
+								<option value="Timugan"> Timugan </option>
+							</select>
+							Los Ba&ntilde;os, Laguna
+						</label>
+					</p>
+					<p>
+						<label> Telephone Number:
+							<input type ="text" name="telephone-number" size="20" maxlength="10" placeholder="ex: (049)310-0954" required>
+						</label>
+						<label class="sex"> Sex:
+							<input type="radio" name="sex" value="M" required> Male
+							<input type="radio" name="sex" value="F" required> Female
+						</label>
+					</p>
+					<p>
+						<label> Date of Birthday: 
+							<select name="birthmonth" id="birthmonth" required>
+								<option value="1"> January </option>
+								<option value="2"> February </option>
+								<option value="3"> March </option>
+								<option value="4"> April </option>
+								<option value="5"> May </option>
+								<option value="6"> June </option>
+								<option value="7"> July </option>
+								<option value="8"> August </option>
+								<option value="9"> September </option>
+								<option value="10"> October </option>
+								<option value="11"> November </option>
+								<option value="12"> December </option>
+							</select>
+							<select name="birthday" id="birthday" required> </select>
+							<select name="birthyear" id="birthyear" required> </select>
+						</label>
+						<label class="age"> Age:
+							<select id="age" required> </select>
+						</label>
+					</p>
+					<p>
+						<label> Place of Birth: <br>
+								<textarea rows="4" cols="81" name="birth-address" class="doubletab" required> </textarea>
+						</label>
+					</p>
+					<p>	<center>
+						Years of Residency: <br>
+						<label>
+							From:
+							<select id="start-residency-year-1" required> <option value="0"> </option> </select>
+						</label>
+						<label class="doubletab">
+							Until:
+							<select id="end-residency-year-1" required> <option value="0"> </option> </select> <br>
+							</label>
+						<label>
+							From:
+							<select id="start-residency-year-2"> <option value="0"> </option> </select>
+						</label>
+						<label class="doubletab">
+							Until:
+							<select id="end-residency-year-2"> <option value="0"> </option> </select> <br>
+							</label>
+						<label>
+							From:
+							<select id="start-residency-year-3"> <option value="0"> </option> </select>
+						</label>
+						<label class="doubletab">
+							Until:
+							<select id="end-residency-year-3"> <option value="0"> </option> </select> <br>
+						</label> </center>
+					</p>
+				</fieldset> <br>
+				<fieldset>
+					<legend> Civil Status: </legend>
+					<p>
+						<label>
+							<input type="radio" name="civil-status" value="Single" class="doubletab" required> Single
+							<input type="radio" name="civil-status" value="Married" class="doubletab" required> Married
+							<input type="radio" name="civil-status" value="Divorced" class="doubletab" required> Divorced
+							<input type="radio" name="civil-status" value="Separated" class="doubletab" required> Separated
+						</label>
+					</p>
+					<fieldset class="innerfield">
+						<legend> If married, please fill up this inner box: </legend>
+						<p>
+							<label> Name of Spouse: <br>
+								<input type ="text" name="spouse-fname" size="20" placeholder="Spouse's First Name" class="tab">
+								<input type ="text" name="spouse-mname" size="20" placeholder="Spouse's Middle Name">
+								<input type ="text" name="spouse-lname" size="20" placeholder="Spouse's Last Name">
+							</label>
+						</p>
+						<p>
+							<label> Age of Spouse:
+								<select id="spouse-age"> </select>
+							</label>
+						</p>
+					</fieldset>
+				</fieldset> <br>
+				<fieldset>
+					<legend> Educational and Employment Background </legend>
+					<p>
+						<label> Work Experience: <br>
+							<textarea rows="4" cols="81" name="work-experience" class="doubletab" required></textarea>
+						</label>
+					</p>
+					<p>
+						<label>
+							Highest Educational Attainment:
+							<select name="month" id="educ-attainment" required>
+							<option value="1"> Elementary Undergraduate </option>
+								<option value="2"> Elementary Graduate </option>
+								<option value="3"> High School Undergraduate </option>
+								<option value="4"> High School Graduate </option>
+								<option value="5"> College Undergraduate </option>
+								<option value="6"> College Graduate </option>
+								<option value="7"> Post-Graduate </option>
+							</select>
+						</label>
+					</p>
+					<p>
+						<label> Are you permanently employed?
+							<input type="radio" name="employed" value="Yes" class="doubletab" required> Yes
+							<input type="radio" name="employed" value="No" class="doubletab" required> No
+						</label>
+					</p>
+					<fieldset class="innerfield">
+						<legend> If yes, please fill up this inner box: </legend>
+						<p>
+							<label> Position: 
+								<input type ="text" name="position">
+							</label>
+							<label style="float: right;"> Salary per month: Php
+									<input type ="text" size="15" name="salary">
+							</label>
+						</p>
+						<p>
+							<label>Employer: 
+							<input type ="text" size="54" placeholder="Employer's Name" name="employer" class="tab">
+							</label>
+						</p>
+						<p>
+							<label>
+								Address: <br>
+								<textarea rows="4" cols="67" name="work-address" class="doubletab" placeholder="Work's address" required></textarea>
+							</label>
+						</p>
+					</fieldset>
+					<p>
+						<label> Other Sources of Income: 
+							<input type ="text" size="73" name="other-source-of-income">
+						</label>
+					</p>
+					<p>
+						<label> How much? Php
+							<input type ="text" name="other-source-of-income-php">
+						</label>
+					</p>
+				</fieldset> <br>
+				<fieldset>
+					<p>
+						<label> <center> Are you a member of PHILHEALTH?
+							<input type="radio" name="philhealth-member" value="Yes" class="tab" required> Yes
+							<input type="radio" name="philhealth-member" value="No" class="tab" required> No </center>
+						</label>
+					</p>
+					<fieldset class="innerfield">
+						<legend> If yes, please fill up this inner box: </legend>
+						<label> <center>PHILHEALTH Membership Number:
+								<input type ="text" name="philhealth-member-no"> </center> <br> <br>
+						</label>
+					</fieldset>
+					<p>
+						<label> <center> Are you a dependent of a PHILHEALTH member?
+							<input type="radio" name="philhealth-dependent" value="Yes" required> Yes
+							<input type="radio" name="philhealth-dependent" value="No" required> No </center>
+						</label>
+					</p>
+					<fieldset class="innerfield">
+						<legend> If yes, please specify: </legend>
+						<label>
+							<center><input type ="text" size="70" name="philhealth-dependent-specify" placeholder="Name of PHILHEALTH member"><center><br><br>
+						</label>
+					</fieldset>
+				</fieldset> <br>
+				<fieldset>
+					<legend> Members of the Family </legend>
+					<table>
+						<tr>
+							<th> Name </th>
+							<th> Occupation </th>
+						</tr>
+						<tr>
+							<td> <input type ="text" size="40" name="family-member1" placeholder="                    Name of Family Member"> </td>
+							<td> <input type ="text" size="40" name="family-member1-occupation" placeholder="                Occupation of Family Member"> </td>
+						</tr>
+						<tr>
+							<td> <input type ="text" size="40" name="family-member2" placeholder="                    Name of Family Member"> </td>
+							<td> <input type ="text" size="40" name="family-member2-occupation" placeholder="                Occupation of Family Member"> </td>
+						</tr>
+						<tr>
+							<td> <input type ="text" size="40" name="family-member3" placeholder="                    Name of Family Member"> </td>
+							<td> <input type ="text" size="40" name="family-member3-occupation" placeholder="                Occupation of Family Member"> </td>
+						</tr>
+					</table>
+				</fieldset> <br>
+				<div class="certify">
+					<center> <input type="checkbox" name="certified" value="yes" required> I hereby certify that all the information above are true and correct to the best of my knowledge and ability. <br>
+					<input type="submit" value="Submit" id="form-submit-button" onClick="success.html">
+					<input type="reset" value="Reset" class="doubletab" id="form-reset-button" onClick="assure()">
+					<button value="Print" class="doubletab" id="form-print-button" onClick="print()"> Print </button><br>
+				</div>
+			</form>
+			<div id="requirements">
+				<div class="req-title"> Requirements for New Applicants: </div> <br>
+					<div class="numbers"> 1. Latest CTC (Cedula) number and date and place it is issued. </div> <br>
+					<div class="numbers"> 2. Photocopy of any of the following supporting documents: </div> <br>
+						<div class="letters"> a. Birth Certificate or Voter's ID </div> <br>
+						<div class="letters"> b. Driver's License </div> <br>
+						<div class="letters"> c. OR any government issued valid ID indicating full name and date of birth </div> <br>
+							<div class="note"> NOTE: Bring original copy for validation </div> <br>
+					<div class="numbers"> 3. Four (4) pieces of 1x1 colored picture </div> <br>
+					<div class="numbers"> 4. Filled-up "Application for Senior Citizen's ID" </div> <br>
+							<div class="note"> NOTE: You may print the online application form in this website or get a copy from Office for Senior Citizens Affairs (OSCA).
+			</div>
+		</section>
+		
+		<section id="home-sec" class="container">
+			<img src="home.jpg" id="header-image">
+			<div id="sub-header"> Ang Pamahalaang Bayan ng Los Ba&ntilde;os, Laguna </div>
+			<img src="6.jpg" id="home-pictures">
+		</section>
+		
+		<section id="contactus-sec" class="container">
+			<div class="header">
+				<img src="contactus.jpg" id="header-image">
+			</div>
+			<div class="contactus-div">
+				Email Address: idontknow@something.com <br>
+				Telephone Number: (049)123-4567 <br>
+				Cellphone Number: 0912-345-6789 - Firstname M. Lastname
+			</div>
+		</section>
+		
+		<section id="aboutus-sec" class="container">
+			<div class="index-header">
+				OSCA | ABOUT US
+			</div>
+				<p>
+					The creation of the Office for Senior Citizens Affairs (OSCA) in Los Ba&ntilde;os, Laguna paved the way to care the needs and concerns of the people ageing from sixty (60) years and above.
+					It was established sometime in the year 1993 consistent with the provision of Republic Act No. 7432, known as "An Act to Maximize the Contribution of Senior Citizens to Nation Building, Grant Benefits and Special Privileges and For Other Purposes".
+					The need of creating this office was conceived and developed to put in place the provisions of laws pertaining to the protection of innate rights of the elderly.
+				</p>
+				<p>
+					It was materialized through the issuance of Executive Order No. 32, and order reconstituting Executive Order No. 35, issued on September 29, 1992, creating the Office for the Senior Affairs (OSCA) signed by Hon. Rodrigo R. Duterte.
+					In consonance herein, an Executive Order No. 15 dated June 2005, otherwise known as an Order providing for the guidelines on the selection of the Head of Office for Senior Citizens Affairs.
+				</p>
+				<p>
+					We believe in the fundamental Vitality and strength of  OSCA lies in our dedicated, capable and straightforward  personnel/ employees, and we commit ourselves to:
+				</p>
+				<p>
+					Maintain  harmonious relationship among all employees and senior citizens’ guests and  clients  based on sense of participation, cooperation , Social Responsibility and an understanding common objectives  by creating a Tangible  Vision, Mission & Goals of OSCA:
+				</p>
+				<p>
+					<center> <strong> VISION: </strong> </center> <br><br>
+						A full   integration   in  the  mainstream of society anchored with social protection system, directly affecting the older persons sector with the end view of  experiencing a Quality of Life.
+				</p> <br>
+				<p>
+					Note: The above text is just copied from the <a href="http://www.davaocity.gov.ph/OSCA/about.aspx."> official website of Office for Senior Citizens Affairs (OSCA) in Davao </a>.
+				</p>
+		</section>
+		
+		<footer>
+			Copyright &copy; 2014. The Local Government of Province of Laguna. <br><br>
+			Site maintained by UPLB's CMSC 127 S-1L students namely Erica Mae M. Yeban, Rahmat Peter Dabalos and Michael Bryan Castro.
+		</footer>
+	</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="stylesheet" type="text/css" href="format.css">
+		<script type="text/javascript" src="jsform.js"></script>
+		<title>
+			OSCA | Office for Senior Citizens Affairs
+		</title>
+	</head>
+
+	<body onload="loadSelectors()">
+		<img src="cover1.jpg" name="slide"  alt="rotating image" id="rotator">
+		<script type="text/javascript">
+			var image1 = new Image()
+			image1.src = "cover1.jpg"
+
+			var image2 = new Image()
+			image2.src = "cover2.jpg"
+
+			var image3 = new Image()
+			image3.src = "cover3.jpg"
+			
+			var image4 = new Image()
+			image4.src = "cover4.jpg"
+			var step = 1
+			function slideit() {
+				document.images["slide"].src = eval("image" + step + ".src")
+				if (step < 4)
+					step++
+				else
+					step = 1
+				setTimeout("slideit()", 2000)
+			}
+			slideit()
+		</script>
+		
+		<section class="success-sec">
+			<div class="index-header">
+				Congratulations!<br><br>
+			</div>
+			<div class="numbers" style="font-size:20px; margin:0px; padding:0px;"> <center>
+				You have successfully submitted your "Application for Senior Citizen's ID." <center> <br>
+				<button class="main" id="b5" style="width:300px;" onclick="window.location='index.html'"> Click to go back to HOME </button>
+			</div>
+		</section>
+	</body>
+
+</html>
+
